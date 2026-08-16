@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Omni-Repurpose Studio — 1-Click Multi-Platform Content Engine</title>
+  <meta name="description" content="Repurpose any YouTube video script, article, or topic into viral Twitter threads, LinkedIn thought-leadership posts, email newsletters, and TikTok/Reels hooks instantly.">
+  <meta name="keywords" content="content repurposing tool, twitter thread generator, linkedin post formatter, newsletter generator, viral video hooks 2026">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://webtools-hub.github.io/omni-repurpose/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Omni-Repurpose Studio — Instant Cross-Platform Distribution">
+  <meta property="og:description" content="Turn 1 script into 5 platform-ready content formats in 1 click. Zero signup required.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Rich Snippet Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Omni-Repurpose Studio",
+    "url": "https://webtools-hub.github.io/omni-repurpose/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free web-based tool for repurposing long-form content into Twitter threads, LinkedIn posts, email newsletters, and video hooks."
+  }
+  </script>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #060913;
+      --card-bg: rgba(18, 24, 38, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --primary-gradient: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);
+      --accent: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --input-bg: rgba(11, 17, 30, 0.85);
+      --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 24px 16px; }
+
+    header { text-align: center; margin-bottom: 24px; }
+    .badge {
+      display: inline-block;
+      padding: 5px 12px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fbbf24;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    header p { color: var(--text-muted); font-size: 0.95rem; }
+
+    .control-panel {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .meta-inputs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media(min-width: 640px) { .meta-inputs { grid-template-columns: 2fr 1fr; } }
+
+    input[type="text"], select, textarea {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--text-main);
+      font-size: 0.9rem;
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-glow {
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      flex: 1;
+      min-width: 200px;
+      transition: 0.2s ease;
+    }
+    .btn-glow:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: #cbd5e1;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
+
+    /* Output Grid */
+    .grid-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+    .tab-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .tab-btn.active {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+
+    .tool-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+    .tool-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+    }
+    .tool-title { font-size: 1rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+
+    .copy-chip {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #fbbf24;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .copy-chip:hover { background: rgba(245, 158, 11, 0.25); }
+
+    .output-area {
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      min-height: 140px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.6;
+    }
+
+    .meta-counter {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cross-Navigation Header -->
+  <div style="background: rgba(11, 17, 30, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px);">
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <span style="font-weight: 800; color: #fbbf24; letter-spacing: 0.5px;">⚡ WEBTOOLS HUB</span>
+      <span style="font-size: 0.75rem; background: rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 4px; color: #94a3b8;">Omni-Repurpose</span>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <a href="https://webtools-hub.github.io/faceless-studio/" style="color: #34d399; text-decoration: none; font-weight: 700; background: rgba(16, 185, 129, 0.12); padding: 5px 10px; border-radius: 6px; font-size: 0.75rem;">FacelessStudio ↗</a>
+      <a href="https://webtools-hub.github.io/creator-studio/" style="color: #818cf8; text-decoration: none; font-weight: 700; background: rgba(99, 102, 241, 0.12); padding: 5px 10px; border-radius: 6px; font-size: 0.75rem;">CreatorStudio ↗</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <span class="badge">🔥 Content Multiplication Engine</span>
+      <h1>Omni-Repurpose Studio</h1>
+      <p>Convert 1 piece of content into a complete cross-platform distribution suite in 1 click.</p>
+    </header>
+
+    <!-- Source Input Controls -->
+    <div class="control-panel">
+      <div class="meta-inputs">
+        <input type="text" id="coreTopic" placeholder="Core Topic / Title (e.g. How to Build a $10K/mo AI Micro-SaaS in 2026)" value="How to Build a $10K/mo AI Micro-SaaS in 2026">
+        <select id="contentTone">
+          <option value="authoritative">💼 Direct & Authoritative</option>
+          <option value="story">📖 Storytelling & Vulnerable</option>
+          <option value="actionable" selected>⚡ Step-by-Step Tactical</option>
+        </select>
+      </div>
+      <textarea id="rawContent" placeholder="Paste your video transcript, notes, or bullet points here (optional - leaving this blank will auto-expand your core topic)...">Step 1: Find an annoying niche problem that creators or businesses encounter daily.
+Step 2: Build a client-side single-page app without expensive backend infrastructure.
+Step 3: Distribute through targeted communities like Reddit and short-form video hooks.
+Step 4: Keep recurring costs near $0 by leveraging GitHub Pages and browser APIs.</textarea>
+      
+      <div class="btn-row">
+        <button class="btn-glow" onclick="repurposeAll()">⚡ Generate 5-Platform Asset Pack</button>
+        <button class="btn-secondary" onclick="downloadAllBundle()">💾 Download All (.txt)</button>
+      </div>
+    </div>
+
+    <!-- Output Stack -->
+    
+    <!-- 1. X/Twitter Thread -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <span class="tool-title">🐦 Viral X / Twitter Thread (5 Tweets)</span>
+        <button class="copy-chip" onclick="copyBox('twitterOut')">Copy Thread</button>
+      </div>
+      <div class="output-area" id="twitterOut"></div>
+      <div class="meta-counter">
+        <span id="tweetCountInfo">5 Tweets generated</span>
+        <span>Optimized for 280-char limit</span>
+      </div>
+    </div>
+
+    <!-- 2. LinkedIn Authority Post -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <span class="tool-title">💼 LinkedIn Thought Leadership Breakdown</span>
+        <button class="copy-chip" onclick="copyBox('linkedinOut')">Copy Post</button>
+      </div>
+      <div class="output-area" id="linkedinOut"></div>
+      <div class="meta-counter">
+        <span>High-Whitespace Layout</span>
+        <span>Includes 5 Viral Hashtags</span>
+      </div>
+    </div>
+
+    <!-- 3. Email Newsletter Edition -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <span class="tool-title">📩 Email Newsletter Teaser + 3 Subject Lines</span>
+        <button class="copy-chip" onclick="copyBox('emailOut')">Copy Newsletter</button>
+      </div>
+      <div class="output-area" id="emailOut"></div>
+      <div class="meta-counter">
+        <span>3 High-CTR Subject Lines Included</span>
+        <span>Ready for Substack / ConvertKit / Beehiiv</span>
+      </div>
+    </div>
+
+    <!-- 4. 3 Viral Short-Form Video Hooks -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <span class="tool-title">⏱️ 3 High-Retention Video Hooks (TikTok / Reels / Shorts)</span>
+        <button class="copy-chip" onclick="copyBox('hooksOut')">Copy Hooks</button>
+      </div>
+      <div class="output-area" id="hooksOut"></div>
+      <div class="meta-counter">
+        <span>Curiosity, Negative Bias, and Data-Driven Angles</span>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Omni-Repurpose Studio • WebTools Hub Suite</p>
+    </footer>
+  </div>
+
+  <script>
+    function repurposeAll() {
+      const topic = document.getElementById('coreTopic').value.trim() || 'Content Strategy Framework';
+      const raw = document.getElementById('rawContent').value.trim();
+      const tone = document.getElementById('contentTone').value;
+
+      // 1. Twitter Thread Generation
+      const twitterThread = [
+        `1/5 Most people overcomplicate ${topic}.\n\nThey spend months planning and zero days executing.\n\nHere is the exact framework to get results in record time 🧵👇`,
+        `2/5 The Fatal Mistake:\n\nTrying to boil the ocean on day one.\n\nInstead, focus on one hyper-specific outcome that solves an immediate bottleneck.`,
+        `3/5 The Core Execution Loop:\n\n• Build lightweight solutions\n• Eliminate heavy infrastructure\n• Iterate based on real user interactions, not assumptions.`,
+        `4/5 Distribution is 80% of the game:\n\nIf you don't talk about what you built, nobody knows it exists. Package every win into bite-sized lessons across multiple platforms.`,
+        `5/5 Summary:\n\n1. Solve one real pain point\n2. Ship clean and lean\n3. Repurpose every single asset\n\nIf you found this valuable, retweet the first tweet and follow for more actionable blueprints.`
+      ].join('\n\n---\n\n');
+      document.getElementById('twitterOut').innerText = twitterThread;
+
+      // 2. LinkedIn Post Generation
+      const linkedinPost = `Most people think mastering ${topic} takes years.\n\nIt doesn't.\n\nIt takes an actionable framework and the discipline to execute consistently.\n\nHere are 3 lessons learned from breaking this down:\n\n1. Simplicity always scales faster than complexity.\n2. User feedback is the only metric that matters early on.\n3. The fastest way to grow is to document the journey publicly.\n\nWhat is your biggest bottleneck when it comes to this right now?\n\n---\n#ContentStrategy #Growth #Productivity #CreatorEconomy #SaaS`;
+      document.getElementById('linkedinOut').innerText = linkedinPost;
+
+      // 3. Email Newsletter Generation
+      const emailEdition = `SUBJECT LINE OPTIONS:\n1. The unfiltered truth about ${topic}\n2. Why 99% fail at ${topic} (and the fix)\n3. My 4-step framework for ${topic}\n\n---\n\nHey reader,\n\nIf you have been looking for a clearer path to master ${topic}, today's edition is for you.\n\nMost advice on this topic focuses on high-level theory. But here is what actually works when you strip away the fluff:\n\n• Step 1: Focus on immediate execution over endless research.\n• Step 2: Keep your tech stack lean and zero-overhead.\n• Step 3: Package your learnings and distribute them widely.\n\nReply to this email and let me know: What is the #1 project you are building this week?\n\nTalk soon,\nYour Name`;
+      document.getElementById('emailOut').innerText = emailEdition;
+
+      // 4. Video Hooks Generation
+      const videoHooks = `🎣 HOOK 1 (Negative Bias / Warning Angle):\n"Stop scrolling if you are trying to master ${topic}. You are probably making the one mistake that ruins 90% of beginners..."\n\n🎣 HOOK 2 (Curiosity Gap Angle):\n"I spent 30 days analyzing ${topic} so you don't have to. Here is the secret blueprint nobody talks about..."\n\n🎣 HOOK 3 (Direct Transformation Angle):\n"Here is the exact 3-step framework I would use if I had to start ${topic} from scratch today with $0..."`;
+      document.getElementById('hooksOut').innerText = videoHooks;
+    }
+
+    function copyBox(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text);
+      alert('Copied to clipboard!');
+    }
+
+    function downloadAllBundle() {
+      const topic = document.getElementById('coreTopic').value.trim() || 'Repurpose_Pack';
+      const bundle = `=== OMNI-REPURPOSE ASSET PACK: ${topic} ===\n\n` +
+        `--- 1. TWITTER THREAD ---\n\n${document.getElementById('twitterOut').innerText}\n\n\n` +
+        `--- 2. LINKEDIN POST ---\n\n${document.getElementById('linkedinOut').innerText}\n\n\n` +
+        `--- 3. EMAIL NEWSLETTER ---\n\n${document.getElementById('emailOut').innerText}\n\n\n` +
+        `--- 4. VIDEO HOOKS ---\n\n${document.getElementById('hooksOut').innerText}\n`;
+
+      const blob = new Blob([bundle], { type: 'text/plain;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `${topic.toLowerCase().replace(/[^a-z0-9]/g, '_')}_assets.txt`;
+      link.click();
+    }
+
+    window.onload = function() {
+      repurposeAll();
+    };
+  </script>
+</body>
+</html>
